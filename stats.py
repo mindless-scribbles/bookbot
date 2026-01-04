@@ -1,3 +1,6 @@
+import sys
+
+
 def get_book_text(path_to_file):
     with open(path_to_file) as f:
         file_contents = f.read()
@@ -5,7 +8,7 @@ def get_book_text(path_to_file):
 
 
 def main():
-    file_path = "books/frankenstein.txt"
+    file_path = sys.argv[1]
     return get_book_text(file_path)
 
 
