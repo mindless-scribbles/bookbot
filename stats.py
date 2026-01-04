@@ -25,5 +25,14 @@ def get_character_count():
             char_count[char] += 1
         else:
             char_count[char] = 1
-    print(char_count)
+    return char_count
 
+
+def sort_list():
+    labeled_char_count = [
+        {"char": key_item, "num": value_item}
+        for key_item, value_item in get_character_count().items()
+    ]
+    labeled_char_count.sort(key=lambda chars: chars["num"], reverse=True)
+    for items in labeled_char_count:
+        print(f"{items['char']}: {items['num']}")
